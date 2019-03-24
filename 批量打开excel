@@ -1,0 +1,37 @@
+Option Explicit
+
+
+Sub OpenAllexcels()
+
+Dim path As String, filename As String
+Dim wb As Workbook
+
+
+'定义地址
+path = "E:\VBA代码库\"
+
+filename = Dir(path)
+
+Do While filename <> ""
+
+    Set wb = Workbooks.Open(path & filename)
+    
+    
+    '此处可省略直接打开
+    MsgBox (filename)
+        
+    '此处可添加代码
+
+
+
+        
+    '此处可添加代码
+        
+    wb.Close
+    
+    '重复求名字
+    filename = Dir
+
+Loop
+
+End Sub
