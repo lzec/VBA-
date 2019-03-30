@@ -1,0 +1,37 @@
+option explicit
+
+
+Sub 付清判断()
+
+,注释：此代码仅用于开票统计表部分
+
+
+Dim a, b, c
+
+a = 3
+
+    Do While Cells(a, 2) <> ""
+    
+        If Cells(a, 22) <> 0 Then
+        
+            Cells(a, 23) = "未付清"
+            Cells(a, 23).Interior.Color = RGB(255, 153, 204)
+            
+                 ElseIf Cells(a, 19) <> 0 Or Cells(a, 21) <> 0 Then
+                
+                    Cells(a, 23) = "已付清"
+                    Cells(a, 23).Interior.Color = RGB(153, 204, 0)
+                    
+                        ElseIf Cells(a, 19) = 0 And Cells(a, 21) = 0 Then
+                        
+                        Cells(a, 23) = "未付款"
+                        Cells(a, 23).Interior.Color = RGB(255, 204, 0)
+                        
+                        
+        
+        End If
+
+    a = a + 1
+    Loop
+
+End Sub
